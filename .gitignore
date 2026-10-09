@@ -1,0 +1,30 @@
+# ---- 构建产物：本仓库只上传源码，不包含打包/安装产物 ----
+dist/
+node_modules/
+build/
+out/
+*.zip
+*.7z
+
+# ---- 依赖缓存与编辑器 ----
+.vscode/
+.idea/
+*.log
+npm-debug.log*
+
+# ---- 本机演示产物：体积大 / 含第三方版权，不入库（需要时本地生成）----
+ref/
+shots/
+_backup/
+_qa/
+*.tmp
+
+# ---- 运行期数据与临时产物 ----
+dist/_*
+shots/_*
+*.local
+
+# ---- 系统文件 ----
+Thumbs.db
+Desktop.ini
+.DS_Store
