@@ -57,49 +57,64 @@
 | 目录 | 是否入库 | 说明 |
 |---|---|---|
 | `src/` `tools/` `scripts/` `vendor/` `docs/` `index.html` `start.bat` | ✅ | 全部源码与文档（41 个自研文件 / 约 1.7 万行；vendor 为 three.js r169 等第三方） |
-| `dist/app.js` | ✅ | esbuild 打包产物（1.5MB），**克隆后双击 index.html / start.bat 即可直接运行，无需构建** |
+| `dist/` | ❌ | esbuild 打包产物（构建生成，不入库）；`start.bat` 直接跑源码，`npm run build` 可生成 |
 | `docs/images/` | ✅ | 18 张精选界面截图（JPEG，2.2MB） |
-| `node_modules/` | ❌ | 仅开发需要：`pnpm install`（esbuild + puppeteer-core，用于打包与无头截图 QA） |
+| `node_modules/` | ❌ | 仅开发需要：`pnpm install`（esbuild + puppeteer-core，用于打包与无头截图 QA）；源码模式运行不需要 |
 | `ref/` | ❌ | 参考视频与抽帧素材（抖音原片，含版权，不入库）；规范见 `docs/REQUIREMENTS.md` |
 | `shots/` | ❌ | 开发期全量截图；`npm run shots` 可一键重新生成 |
 
 ```bash
-# 克隆后 30 秒跑起来
-git clone <repo> && cd idc-3d-ops
-#  方式一：双击 start.bat（自动起静态服务 + 动环网关并打开浏览器）
-#  方式二：直接双击 index.html（3D/页面/文字指令/语音播报可用，麦克风识别降级为输入框）
-#  方式三：想要动环网关与真实协议对接
-node tools/gateway/server.mjs --port 8124 --driver sim     # 或 modbus-tcp / snmp / mqtt / http-json
-node scripts/start.mjs 8123                                 # 打开 http://localhost:8123/?gw=1
+# 克隆后 30 秒跑起来（零构建）
+git clone <repo> && cd idc-visual-ops
+start.bat                 # Windows：起服务 + 动环网关，浏览器自动打开（源码 ES 模块直接运行）
+
+# 或者（手动）
+node scripts/start.mjs 8123                 # 纯静态服务（源码模式）
+node tools/gateway/server.mjs --port 8124 --driver sim   # 需要动环数据时
+# 浏览器打开 http://localhost:8123/   （要连网关就加 ?gw=1）
+
+# file:// 双击 index.html 的玩法需要先构建
+pnpm install && npm run build
 ```
 
 ---
 
 ## 一、快速开始
 
-### 方式 1（推荐，含语音识别）：双击 `start.bat`
+> **本仓库只包含源码**（构建产物 `dist/` 已按 `.gitignore` 排除），因此有三种运行方式：
 
-启动器会：① 自动挑一个空闲端口（默认 8123，被占用就顺延 8124/8125…）；
-② **先把服务起起来，探测到页面能返回 200 之后才打开浏览器**（不会出现"先开浏览器→连不上"）；
-③ 兼容三种运行时，任何 Windows 都能跑：**Node.js → Python(py/python) → Windows 自带 PowerShell**（无需安装任何东西）。
+### 方式 1（推荐，零构建）：双击 `start.bat`
 
-双击后会弹出一个黑色控制台窗口，显示：
+`start.bat` 会起本地静态服务（`http://localhost:8123`）并**直接以 ES 模块加载 `src/` 源码**——
+**无需安装依赖、无需打包**；若检测到 `node_modules/esbuild` 还会顺手生成 `dist/app.js`。
+同时它会自动拉起动环网关（`:8124`）并以 `?gw=1` 打开页面。
 
 ```
 URL: http://localhost:8123/
-Runtime: Node.js / Python launcher / PowerShell built-in server
+Runtime: Node.js / Python / PowerShell built-in server
 ```
 
-- **这个窗口要保持开着**（它就是服务本身；关掉窗口 = 服务停止）。
-- 浏览器若没自动弹出，手动访问控制台里显示的 URL 即可。
-- 看到 "连接被拒绝" 时按 **F5 刷新**一次即可（极少数机器上浏览器启动比服务快）。
+- **控制台窗口要保持开着**（它就是服务本身）；浏览器没自动弹出就手动访问上面的 URL。
+- 语音识别需要 `http://localhost` 安全上下文；`file://` 不行。
 
-> 语音识别（Web Speech API）要求**安全上下文**：`http://localhost` 可用，`file://` 不行。
-> 所以要用麦克风说话，请走 `start.bat`；直接双击 `index.html` 时语音识别会自动降级为输入框打字（其余功能都正常）。
+### 方式 2（file:// 双击 index.html）：需先构建
 
-### 方式 2（最省事）：直接双击 `index.html`
-3D 场景、六大页面、文字指令、语音播报全部可用；**麦克风识别自动降级为文字输入框**（右下角"小维"面板里打字即可）。
+双击 `index.html` 属于 `file://` 场景，ES 模块会被浏览器 CORS 拦截，所以需要打包产物：
 
+```bash
+pnpm install            # 或 npm install（只装 esbuild 等开发依赖）
+npm run build           # 生成 dist/app.js（单文件，可直接双击运行）
+```
+
+构建后再双击 `index.html` 即可；若未构建，页面会给出明确提示而不是白屏。
+
+### 方式 3（开发/QA）
+
+```bash
+npm run dev             # 构建 + 起服务
+npm run shots           # 无头 Chrome 逐页截图 + 控制台错误检查
+node tools/gateway/server.mjs --port 8124 --driver sim   # 单独起动环网关
+```
 浏览器建议：Chrome / Edge 最新版（需支持 WebGL2）。
 
 ---

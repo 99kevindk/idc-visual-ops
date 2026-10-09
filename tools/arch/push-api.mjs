@@ -5,7 +5,7 @@
  *    1) 空仓库先用 Contents API 建首个提交（GitHub 限制：空仓库不能用 Git Data API）；
  *    2) blob 内容寻址 → 上传后 sha 与本地一致；再按**完全相同的元数据**重建 commit，
  *       因此远端 commit sha 与本地 HEAD 一致 —— 本地/远端不会分叉，后续 git push 可继续用；
- *    3) 最后自动把本地分支与 origin/main 对齐并设置 upstream。
+ *    3) 尝试用相同元数据在本地重建提交以对齐 sha；若 GitHub 侧提交对象含不可见差异（Contents API 提交常见），\n *       则打印手动对齐命令：git fetch origin && git reset --hard origin/main
  *  用法：GH_TOKEN=xxx node tools/arch/push-api.mjs <owner>/<repo> [branch]
  * ========================================================================= */
 import fs from "node:fs";
@@ -27,7 +27,7 @@ const call = async (method, url, body) => {
   return { ok: res.ok, status: res.status, json };
 };
 const sh = (cmd, env) => execSync(cmd, { cwd: ROOT, encoding: "utf8", env: Object.assign({}, process.env, env || {}) }).trim();
-const git = (cmd, env) => sh("git " + cmd, env);
+const git = (cmd, env) => sh("git -c core.quotepath=false " + cmd, env);
 const pad = (s) => String(s).padEnd(14);
 
 /* ---------- 0. 准备：本地 HEAD 信息 ---------- */
@@ -63,7 +63,10 @@ if (!parentSha) {
                 GIT_COMMITTER_NAME: bc.committer.name, GIT_COMMITTER_EMAIL: bc.committer.email, GIT_COMMITTER_DATE: bc.committer.date };
   git("add -- .gitignore", env);
   const btree = git("write-tree", env);
-  const bshaLocal = git("commit-tree " + btree + " -m " + JSON.stringify(bc.message.replace(/\s+$/, "")), env);
+  const bmsg = path.join(ROOT, ".git", "tmp-boot-msg");
+  fs.writeFileSync(bmsg, bc.message.replace(/\s+$/, "") + "\n");
+  const bshaLocal = git("commit-tree " + btree + " -F " + JSON.stringify(bmsg), env);
+  fs.unlinkSync(bmsg);
   try { fs.unlinkSync(idx); } catch (e) {}
   console.log(pad("本地重建") + bshaLocal.slice(0, 10) + (bshaLocal === bsha ? " ✓ 与远端一致（历史可精确对齐）" : " ⚠ 不一致，将按远端 sha 继续"));
   A = bshaLocal === bsha ? bshaLocal : bsha;   // 以远端为准
@@ -75,7 +78,7 @@ let done = 0, bad = 0;
 const CONC = 6;
 const upload = async (list) => {
   for (const e of list) {
-    const buf = fs.readFileSync(path.join(ROOT, e.file));
+    const buf = execSync("git -c core.quotepath=false cat-file blob " + e.sha, { cwd: ROOT, maxBuffer: 64 * 1024 * 1024 });
     const r = await call("POST", "/repos/" + REPO + "/git/blobs", { content: buf.toString("base64"), encoding: "base64" });
     if (r.json.sha !== e.sha) { bad++; console.warn("  ⚠ " + e.file + " sha 不一致"); }
     done++;
@@ -105,7 +108,7 @@ if (!aligned) {
                 GIT_COMMITTER_NAME: who.cn, GIT_COMMITTER_EMAIL: who.ce, GIT_COMMITTER_DATE: who.cI };
   const msgFile = path.join(ROOT, ".git", "tmp-msg");
   fs.writeFileSync(msgFile, msg);
-  const localB = git("commit-tree " + fullTree + (parentSha ? " -p " + parentSha : "") + " -F " + JSON.stringify(msgFile), env);
+  const localB = git("commit-tree " + fullTree + (parentSha ? " -p " + parentSha : "") + " -F " + msgFile.replace(/\\\\/g, "/"), env);
   fs.unlinkSync(msgFile);
   if (localB === remoteSha) {
     git("update-ref refs/heads/" + BRANCH + " " + localB);
