@@ -1,0 +1,290 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>IDC 可视化运维项目 · 项目结构图谱</title>
+<style>
+ html,body{margin:0;height:100%;background:#05080f;color:#dce9ff;font-family:"Microsoft YaHei",sans-serif;overflow:hidden}
+ #bar{height:44px;display:flex;align-items:center;gap:10px;padding:0 14px;border-bottom:1px solid rgba(64,180,255,.18);background:#0a1524}
+ #bar b{letter-spacing:2px}.btn{background:rgba(34,211,238,.08);border:1px solid rgba(64,180,255,.25);color:#a9d8ef;border-radius:3px;padding:5px 10px;font-size:12px;cursor:pointer}
+ .btn:hover{background:rgba(34,211,238,.2);color:#eaf9ff}
+ #wrap{position:absolute;inset:44px 0 0 0;overflow:hidden;cursor:grab}
+ #wrap.drag{cursor:grabbing}
+ #stage{position:absolute;left:0;top:0;transform-origin:0 0}
+ .node{cursor:pointer}
+ .node rect{transition:filter .15s}
+ .node:hover rect{filter:brightness(1.6)}
+ .edge{opacity:.55}.edge.hl{opacity:1;stroke-width:2.4}
+ #tip{position:absolute;right:12px;top:12px;max-width:300px;background:rgba(8,20,34,.94);border:1px solid rgba(64,180,255,.2);
+      border-radius:3px;padding:10px 12px;font-size:11.5px;line-height:1.7;color:#9db6d4}
+ #tip b{color:#eaf9ff}
+</style></head><body>
+<div id="bar"><b>项目结构图谱</b>
+  <button class="btn" id="zin">放大</button><button class="btn" id="zout">缩小</button>
+  <button class="btn" id="zfit">适应</button><button class="btn" id="z100">1:1</button>
+  <span style="margin-left:auto;color:#5f7791;font-size:11px">节点=46 文件 · 依赖边=27 · 事件=63 · 悬停节点高亮关联</span>
+</div>
+<div id="wrap"><div id="stage"><svg xmlns="http://www.w3.org/2000/svg" width="1680" height="1212" viewBox="0 0 1680 1212" font-family="'Microsoft YaHei',sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(34,211,238,.55)"/></marker></defs>
+<rect width="100%" height="100%" fill="#05080f"/>
+<text x="40" y="68" fill="#eaf9ff" font-size="17" letter-spacing="3">IDC 可视化运维项目 · 项目结构图谱</text>
+<text x="1640" y="68" fill="#5f7791" font-size="11" text-anchor="end">由 tools/arch/graph.mjs 从源码静态分析生成</text>
+<g><rect x="40" y="28" width="10" height="10" rx="2" fill="#2f7fe8"/><text x="56" y="37" fill="#9db6d4" font-size="11">外壳与入口</text></g><g><rect x="218" y="28" width="10" height="10" rx="2" fill="#22c55e"/><text x="234" y="37" fill="#9db6d4" font-size="11">数据与总线</text></g><g><rect x="396" y="28" width="10" height="10" rx="2" fill="#7c6cf0"/><text x="412" y="37" fill="#9db6d4" font-size="11">库（图元/材质/组件）</text></g><g><rect x="574" y="28" width="10" height="10" rx="2" fill="#22d3ee"/><text x="590" y="37" fill="#9db6d4" font-size="11">渲染与视图</text></g><g><rect x="752" y="28" width="10" height="10" rx="2" fill="#f5a524"/><text x="768" y="37" fill="#9db6d4" font-size="11">交互与编排</text></g><g><rect x="930" y="28" width="10" height="10" rx="2" fill="#8aa0bd"/><text x="946" y="37" fill="#9db6d4" font-size="11">网关与工具链</text></g><g><rect x="1108" y="28" width="10" height="10" rx="2" fill="#5f7791"/><text x="1124" y="37" fill="#9db6d4" font-size="11">文档与其它</text></g>
+<g class="edges"><path class="edge import" data-from="src/app.js" data-to="src/data.js" d="M1085.2631578947369,119 C673.1578947368421,119 673.1578947368421,119 261.0526315789474,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/scene3d.js" d="M1085.2631578947369,119 C894.2105263157895,119 894.2105263157895,119 703.1578947368421,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/hud.js" d="M1085.2631578947369,119 C894.2105263157895,119 894.2105263157895,185 703.1578947368421,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/xiaowei.js" d="M1085.2631578947369,119 C1004.7368421052631,119 1004.7368421052631,185 924.2105263157895,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/donghuan.js" d="M1085.2631578947369,119 C673.1578947368421,119 673.1578947368421,251 261.0526315789474,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/symbols.js" d="M1085.2631578947369,119 C783.6842105263158,119 783.6842105263158,119 482.10526315789474,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/floorplan.js" d="M1085.2631578947369,119 C894.2105263157895,119 894.2105263157895,251 703.1578947368421,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/donghuan.js" data-to="src/pointtable.js" d="M422.1052631578948,251 C341.5789473684211,251 341.5789473684211,185 261.0526315789474,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/props.js" data-to="vendor/three.module.js" d="M643.1578947368421,251 C1004.7368421052631,251 1004.7368421052631,1043 1366.3157894736842,1043" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/props.js" data-to="src/textures.js" d="M643.1578947368421,251 C562.6315789473684,251 562.6315789473684,185 482.10526315789474,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/three.module.js" d="M864.2105263157895,119 C1115.2631578947369,119 1115.2631578947369,1043 1366.3157894736842,1043" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/OrbitControls.js" d="M864.2105263157895,119 C1115.2631578947369,119 1115.2631578947369,911 1366.3157894736842,911" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/RoomEnvironment.js" d="M864.2105263157895,119 C1115.2631578947369,119 1115.2631578947369,977 1366.3157894736842,977" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/textures.js" d="M864.2105263157895,119 C673.1578947368421,119 673.1578947368421,185 482.10526315789474,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/props.js" d="M864.2105263157895,119 C673.1578947368421,119 673.1578947368421,251 482.10526315789474,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/pointtable.js" d="M864.2105263157895,119 C562.6315789473684,119 562.6315789473684,185 261.0526315789474,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/textures.js" data-to="vendor/three.module.js" d="M643.1578947368421,185 C1004.7368421052631,185 1004.7368421052631,1043 1366.3157894736842,1043" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="src/pointtable.js" d="M1306.3157894736842,119 C783.6842105263158,119 783.6842105263158,185 261.0526315789474,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/ws.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,251 1145.2631578947369,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/alarms.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,185 1145.2631578947369,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/sim.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,317 1145.2631578947369,317" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/modbus-tcp.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,383 1145.2631578947369,383" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/snmp.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,449 1145.2631578947369,449" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/mqtt.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,515 1145.2631578947369,515" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/http-json.mjs" d="M1306.3157894736842,119 C1225.7894736842104,119 1225.7894736842104,581 1145.2631578947369,581" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="vendor/OrbitControls.js" data-to="vendor/three.module.js" d="M1527.3684210526314,911 C1446.842105263158,911 1446.842105263158,1043 1366.3157894736842,1043" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="vendor/RoomEnvironment.js" data-to="vendor/three.module.js" d="M1527.3684210526314,977 C1446.842105263158,977 1446.842105263158,1043 1366.3157894736842,1043" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/></g>
+<g class="nodes"><g class="node" data-id="index.html">
+    <rect x="40" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
+    <rect x="40" y="96" width="4" height="46" rx="2" fill="#2f7fe8"/>
+    <text x="54" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">index.html</text>
+    <text x="54" y="132" fill="#7f9ab8" font-size="10">76 行</text>
+  </g><g class="node" data-id="start.bat">
+    <rect x="40" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
+    <rect x="40" y="162" width="4" height="46" rx="2" fill="#2f7fe8"/>
+    <text x="54" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">start.bat</text>
+    <text x="54" y="198" fill="#7f9ab8" font-size="10">90 行</text>
+  </g><g class="node" data-id="package.json">
+    <rect x="40" y="228" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
+    <rect x="40" y="228" width="4" height="46" rx="2" fill="#2f7fe8"/>
+    <text x="54" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">package.json</text>
+    <text x="54" y="264" fill="#7f9ab8" font-size="10">21 行</text>
+  </g><g class="node" data-id="src/base.css">
+    <rect x="40" y="294" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
+    <rect x="40" y="294" width="4" height="46" rx="2" fill="#2f7fe8"/>
+    <text x="54" y="314" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">base.css</text>
+    <text x="54" y="330" fill="#7f9ab8" font-size="10">207 行</text>
+  </g><g class="node" data-id="src/data.js">
+    <rect x="261.0526315789474" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#22c55e" stroke-width="1.4"/>
+    <rect x="261.0526315789474" y="96" width="4" height="46" rx="2" fill="#22c55e"/>
+    <text x="275.0526315789474" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">data.js</text>
+    <text x="275.0526315789474" y="132" fill="#7f9ab8" font-size="10">365 行 · 定义 bus,data</text>
+  </g><g class="node" data-id="src/pointtable.js">
+    <rect x="261.0526315789474" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#22c55e" stroke-width="1.4"/>
+    <rect x="261.0526315789474" y="162" width="4" height="46" rx="2" fill="#22c55e"/>
+    <text x="275.0526315789474" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">pointtable.js</text>
+    <text x="275.0526315789474" y="198" fill="#7f9ab8" font-size="10">262 行</text>
+  </g><g class="node" data-id="src/donghuan.js">
+    <rect x="261.0526315789474" y="228" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#22c55e" stroke-width="1.4"/>
+    <rect x="261.0526315789474" y="228" width="4" height="46" rx="2" fill="#22c55e"/>
+    <text x="275.0526315789474" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">donghuan.js</text>
+    <text x="275.0526315789474" y="264" fill="#7f9ab8" font-size="10">536 行 · 定义 dh</text>
+  </g><g class="node" data-id="src/symbols.js">
+    <rect x="482.10526315789474" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#7c6cf0" stroke-width="1.4"/>
+    <rect x="482.10526315789474" y="96" width="4" height="46" rx="2" fill="#7c6cf0"/>
+    <text x="496.10526315789474" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">symbols.js</text>
+    <text x="496.10526315789474" y="132" fill="#7f9ab8" font-size="10">2200 行 · 定义 symbols</text>
+  </g><g class="node" data-id="src/textures.js">
+    <rect x="482.10526315789474" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#7c6cf0" stroke-width="1.4"/>
+    <rect x="482.10526315789474" y="162" width="4" height="46" rx="2" fill="#7c6cf0"/>
+    <text x="496.10526315789474" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">textures.js</text>
+    <text x="496.10526315789474" y="198" fill="#7f9ab8" font-size="10">689 行</text>
+  </g><g class="node" data-id="src/props.js">
+    <rect x="482.10526315789474" y="228" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#7c6cf0" stroke-width="1.4"/>
+    <rect x="482.10526315789474" y="228" width="4" height="46" rx="2" fill="#7c6cf0"/>
+    <text x="496.10526315789474" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">props.js</text>
+    <text x="496.10526315789474" y="264" fill="#7f9ab8" font-size="10">224 行</text>
+  </g><g class="node" data-id="src/scene3d.js">
+    <rect x="703.1578947368421" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#22d3ee" stroke-width="1.4"/>
+    <rect x="703.1578947368421" y="96" width="4" height="46" rx="2" fill="#22d3ee"/>
+    <text x="717.1578947368421" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">scene3d.js</text>
+    <text x="717.1578947368421" y="132" fill="#7f9ab8" font-size="10">2079 行 · 定义 scene</text>
+  </g><g class="node" data-id="src/hud.js">
+    <rect x="703.1578947368421" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#22d3ee" stroke-width="1.4"/>
+    <rect x="703.1578947368421" y="162" width="4" height="46" rx="2" fill="#22d3ee"/>
+    <text x="717.1578947368421" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">hud.js</text>
+    <text x="717.1578947368421" y="198" fill="#7f9ab8" font-size="10">2221 行 · 定义 data,hud</text>
+  </g><g class="node" data-id="src/floorplan.js">
+    <rect x="703.1578947368421" y="228" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#22d3ee" stroke-width="1.4"/>
+    <rect x="703.1578947368421" y="228" width="4" height="46" rx="2" fill="#22d3ee"/>
+    <text x="717.1578947368421" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">floorplan.js</text>
+    <text x="717.1578947368421" y="264" fill="#7f9ab8" font-size="10">1006 行 · 定义 plan</text>
+  </g><g class="node" data-id="src/app.js">
+    <rect x="924.2105263157895" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#f5a524" stroke-width="1.4"/>
+    <rect x="924.2105263157895" y="96" width="4" height="46" rx="2" fill="#f5a524"/>
+    <text x="938.2105263157895" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">app.js</text>
+    <text x="938.2105263157895" y="132" fill="#7f9ab8" font-size="10">245 行 · 定义 app</text>
+  </g><g class="node" data-id="src/xiaowei.js">
+    <rect x="924.2105263157895" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#f5a524" stroke-width="1.4"/>
+    <rect x="924.2105263157895" y="162" width="4" height="46" rx="2" fill="#f5a524"/>
+    <text x="938.2105263157895" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">xiaowei.js</text>
+    <text x="938.2105263157895" y="198" fill="#7f9ab8" font-size="10">1214 行 · 定义 xiaowei</text>
+  </g><g class="node" data-id="tools/gateway/server.mjs">
+    <rect x="1145.2631578947369" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="96" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/server.mjs</text>
+    <text x="1159.2631578947369" y="132" fill="#7f9ab8" font-size="10">491 行</text>
+  </g><g class="node" data-id="tools/gateway/alarms.mjs">
+    <rect x="1145.2631578947369" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="162" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/alarms.mjs</text>
+    <text x="1159.2631578947369" y="198" fill="#7f9ab8" font-size="10">219 行</text>
+  </g><g class="node" data-id="tools/gateway/ws.mjs">
+    <rect x="1145.2631578947369" y="228" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="228" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/ws.mjs</text>
+    <text x="1159.2631578947369" y="264" fill="#7f9ab8" font-size="10">286 行</text>
+  </g><g class="node" data-id="tools/gateway/drivers/sim.mjs">
+    <rect x="1145.2631578947369" y="294" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="294" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="314" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/sim.mjs</text>
+    <text x="1159.2631578947369" y="330" fill="#7f9ab8" font-size="10">305 行</text>
+  </g><g class="node" data-id="tools/gateway/drivers/modbus-tcp.mjs">
+    <rect x="1145.2631578947369" y="360" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="360" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="380" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/modbus-tcp.mjs</text>
+    <text x="1159.2631578947369" y="396" fill="#7f9ab8" font-size="10">267 行</text>
+  </g><g class="node" data-id="tools/gateway/drivers/snmp.mjs">
+    <rect x="1145.2631578947369" y="426" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="426" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="446" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/snmp.mjs</text>
+    <text x="1159.2631578947369" y="462" fill="#7f9ab8" font-size="10">259 行</text>
+  </g><g class="node" data-id="tools/gateway/drivers/mqtt.mjs">
+    <rect x="1145.2631578947369" y="492" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="492" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="512" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/mqtt.mjs</text>
+    <text x="1159.2631578947369" y="528" fill="#7f9ab8" font-size="10">278 行</text>
+  </g><g class="node" data-id="tools/gateway/drivers/http-json.mjs">
+    <rect x="1145.2631578947369" y="558" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="558" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="578" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/http-json.mjs</text>
+    <text x="1159.2631578947369" y="594" fill="#7f9ab8" font-size="10">173 行</text>
+  </g><g class="node" data-id="tools/gateway/test.mjs">
+    <rect x="1145.2631578947369" y="624" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="624" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="644" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/test.mjs</text>
+    <text x="1159.2631578947369" y="660" fill="#7f9ab8" font-size="10">325 行</text>
+  </g><g class="node" data-id="scripts/start.mjs">
+    <rect x="1145.2631578947369" y="690" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="690" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="710" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">start.mjs</text>
+    <text x="1159.2631578947369" y="726" fill="#7f9ab8" font-size="10">68 行</text>
+  </g><g class="node" data-id="scripts/serve.ps1">
+    <rect x="1145.2631578947369" y="756" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="756" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="776" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">serve.ps1</text>
+    <text x="1159.2631578947369" y="792" fill="#7f9ab8" font-size="10">66 行</text>
+  </g><g class="node" data-id="scripts/open-when-ready.ps1">
+    <rect x="1145.2631578947369" y="822" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="822" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="842" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">open-when-ready.ps1</text>
+    <text x="1159.2631578947369" y="858" fill="#7f9ab8" font-size="10">12 行</text>
+  </g><g class="node" data-id="scripts/build.mjs">
+    <rect x="1145.2631578947369" y="888" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="888" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="908" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">build.mjs</text>
+    <text x="1159.2631578947369" y="924" fill="#7f9ab8" font-size="10">23 行</text>
+  </g><g class="node" data-id="scripts/shot.mjs">
+    <rect x="1145.2631578947369" y="954" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="954" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="974" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">shot.mjs</text>
+    <text x="1159.2631578947369" y="990" fill="#7f9ab8" font-size="10">66 行</text>
+  </g><g class="node" data-id="scripts/allshots.mjs">
+    <rect x="1145.2631578947369" y="1020" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="1020" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="1040" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">allshots.mjs</text>
+    <text x="1159.2631578947369" y="1056" fill="#7f9ab8" font-size="10">39 行</text>
+  </g><g class="node" data-id="tools/arch/graph.mjs">
+    <rect x="1145.2631578947369" y="1086" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1145.2631578947369" y="1086" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1159.2631578947369" y="1106" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">graph.mjs</text>
+    <text x="1159.2631578947369" y="1122" fill="#7f9ab8" font-size="10">373 行</text>
+  </g><g class="node" data-id="README.md">
+    <rect x="1366.3157894736842" y="96" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="96" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">README.md</text>
+    <text x="1380.3157894736842" y="132" fill="#7f9ab8" font-size="10">338 行</text>
+  </g><g class="node" data-id="THIRD-PARTY-NOTICES.md">
+    <rect x="1366.3157894736842" y="162" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="162" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">THIRD-PARTY-NOTICES.md</text>
+    <text x="1380.3157894736842" y="198" fill="#7f9ab8" font-size="10">55 行</text>
+  </g><g class="node" data-id="docs/REQUIREMENTS.md">
+    <rect x="1366.3157894736842" y="228" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="228" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/REQUIREMENTS.md</text>
+    <text x="1380.3157894736842" y="264" fill="#7f9ab8" font-size="10">214 行</text>
+  </g><g class="node" data-id="docs/动环接口规范.md">
+    <rect x="1366.3157894736842" y="294" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="294" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="314" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/动环接口规范.md</text>
+    <text x="1380.3157894736842" y="330" fill="#7f9ab8" font-size="10">184 行</text>
+  </g><g class="node" data-id="docs/合规与许可说明.md">
+    <rect x="1366.3157894736842" y="360" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="360" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="380" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/合规与许可说明.md</text>
+    <text x="1380.3157894736842" y="396" fill="#7f9ab8" font-size="10">98 行</text>
+  </g><g class="node" data-id="docs/启动与故障排查.md">
+    <rect x="1366.3157894736842" y="426" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="426" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="446" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/启动与故障排查.md</text>
+    <text x="1380.3157894736842" y="462" fill="#7f9ab8" font-size="10">91 行</text>
+  </g><g class="node" data-id="docs/提示词与制作方法.md">
+    <rect x="1366.3157894736842" y="492" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="492" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="512" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/提示词与制作方法.md</text>
+    <text x="1380.3157894736842" y="528" fill="#7f9ab8" font-size="10">96 行</text>
+  </g><g class="node" data-id="docs/机房图纸与图元规范.md">
+    <rect x="1366.3157894736842" y="558" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="558" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="578" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/机房图纸与图元规范.md</text>
+    <text x="1380.3157894736842" y="594" fill="#7f9ab8" font-size="10">140 行</text>
+  </g><g class="node" data-id="docs/项目图谱.html">
+    <rect x="1366.3157894736842" y="624" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="624" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="644" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/项目图谱.html</text>
+    <text x="1380.3157894736842" y="660" fill="#7f9ab8" font-size="10">290 行</text>
+  </g><g class="node" data-id="docs/项目图谱.md">
+    <rect x="1366.3157894736842" y="690" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="690" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="710" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/项目图谱.md</text>
+    <text x="1380.3157894736842" y="726" fill="#7f9ab8" font-size="10">291 行</text>
+  </g><g class="node" data-id="scripts/serve.mjs">
+    <rect x="1366.3157894736842" y="756" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="756" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="776" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">serve.mjs</text>
+    <text x="1380.3157894736842" y="792" fill="#7f9ab8" font-size="10">23 行</text>
+  </g><g class="node" data-id="src/styles.css">
+    <rect x="1366.3157894736842" y="822" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="822" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="842" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">styles.css</text>
+    <text x="1380.3157894736842" y="858" fill="#7f9ab8" font-size="10">605 行</text>
+  </g><g class="node" data-id="vendor/OrbitControls.js">
+    <rect x="1366.3157894736842" y="888" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="888" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="908" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">vendor/OrbitControls.js</text>
+    <text x="1380.3157894736842" y="924" fill="#7f9ab8" font-size="10">1524 行</text>
+  </g><g class="node" data-id="vendor/RoomEnvironment.js">
+    <rect x="1366.3157894736842" y="954" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="954" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="974" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">vendor/RoomEnvironment.js</text>
+    <text x="1380.3157894736842" y="990" fill="#7f9ab8" font-size="10">145 行</text>
+  </g><g class="node" data-id="vendor/three.module.js">
+    <rect x="1366.3157894736842" y="1020" width="161.05263157894737" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
+    <rect x="1366.3157894736842" y="1020" width="4" height="46" rx="2" fill="#5f7791"/>
+    <text x="1380.3157894736842" y="1040" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">vendor/three.module.js</text>
+    <text x="1380.3157894736842" y="1056" fill="#7f9ab8" font-size="10">54156 行</text>
+  </g></g>
+</svg></div></div>
+<div id="tip"><b>用法</b><br>滚轮缩放 · 拖动平移 · 悬停节点高亮其依赖与被依赖<br>
+<b>图例</b><br>青色曲线 = 源码 import · 灰虚线 = 外部依赖<br>
+左侧色条为所属分层（见 README 架构章节）</div>
+<script>
+(function(){
+  var stage=document.getElementById("stage"),wrap=document.getElementById("wrap");
+  var s=1,tx=0,ty=0,drag=null;
+  function apply(){stage.style.transform="translate("+tx+"px,"+ty+"px) scale("+s+")";}
+  function zoom(f,cx,cy){var r=wrap.getBoundingClientRect();cx=cx==null?r.width/2:cx;cy=cy==null?r.height/2:cy;
+    tx=cx-(cx-tx)*f;ty=cy-(cy-ty)*f;s=Math.max(.2,Math.min(3,s*f));apply();}
+  wrap.addEventListener("wheel",function(e){e.preventDefault();var r=wrap.getBoundingClientRect();zoom(e.deltaY<0?1.12:1/1.12,e.clientX-r.left,e.clientY-r.top);},{passive:false});
+  wrap.addEventListener("mousedown",function(e){drag={x:e.clientX-tx,y:e.clientY-ty};wrap.classList.add("drag");});
+  addEventListener("mousemove",function(e){if(!drag)return;tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();});
+  addEventListener("mouseup",function(){drag=null;wrap.classList.remove("drag");});
+  document.getElementById("zin").onclick=function(){zoom(1.2);};
+  document.getElementById("zout").onclick=function(){zoom(1/1.2);};
+  document.getElementById("z100").onclick=function(){s=1;tx=0;ty=0;apply();};
+  document.getElementById("zfit").onclick=function(){var r=wrap.getBoundingClientRect();var b=stage.querySelector("svg").getBoundingClientRect();
+    var k=Math.min(r.width/(b.width/s),r.height/(b.height/s))*0.94;s=k;tx=(r.width-b.width/s*k)/2;ty=(r.height-b.height/s*k)/2;apply();};
+  var nodes=wrap.querySelectorAll(".node"),edges=wrap.querySelectorAll(".edge");
+  nodes.forEach(function(n){n.addEventListener("mouseenter",function(){
+    var id=n.dataset.id;nodes.forEach(function(m){m.style.opacity=(m.dataset.id===id?"1":".45");});
+    edges.forEach(function(ed){var on=ed.dataset.from===id||ed.dataset.to===id;ed.classList.toggle("hl",on);ed.style.opacity=on?"1":".15";});
+  });n.addEventListener("mouseleave",function(){nodes.forEach(function(m){m.style.opacity="1";});
+    edges.forEach(function(ed){ed.classList.remove("hl");ed.style.opacity="";});});});
+  document.getElementById("zfit").click();
+})();
+</script></body></html>

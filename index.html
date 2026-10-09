@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IDC 可视化运维项目 · 3D 机房可视化运维</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a1524'/%3E%3Crect x='7' y='10' width='18' height='14' rx='2' fill='none' stroke='%2322d3ee' stroke-width='2'/%3E%3Cpath d='M11 14h10M11 18h10' stroke='%2322d3ee' stroke-width='2'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="src/base.css" />
+<link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="tb-left">
+      <span class="clock" id="clock">2026-11-02 14:28:36</span>
+      <button class="btn-ghost" id="btn-guide">查看引导</button>
+      <button class="btn-ghost" id="btn-about">制作资料</button>
+    </div>
+    <div class="tb-center">
+      <div class="brand-wrap">
+        <span class="brand-line"></span>
+        <div class="brand">IDC 智能运维管理平台</div>
+        <span class="brand-line"></span>
+      </div>
+      <div class="brand-en">IDC INTELLIGENT OPERATION AND MAINTENANCE PLATFORM</div>
+    </div>
+    <div class="tb-right">
+      <span class="weather" id="weather">上海 18℃</span>
+      <button class="icon-btn" id="btn-bell" title="告警消息">🔔<i class="dot" id="bell-dot">4</i></button>
+      <span class="user"><i class="avatar">管</i>管理员</span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab" data-page="overview">总览</button>
+    <button class="tab" data-page="monitor">机房监控</button>
+    <button class="tab" data-page="assets">资产管理</button>
+    <button class="tab" data-page="energy">能效管理</button>
+    <button class="tab" data-page="alarms">告警中心</button>
+    <button class="tab" data-page="workorder">运维工单</button>
+    <button class="tab" data-page="donghuan">动环监控</button>
+    <button class="tab" data-page="plan">机房图纸</button>
+  </nav>
+
+  <main id="stage" data-page="overview">
+    <canvas id="gl"></canvas>
+    <div id="hud-root"></div>
+    <div id="plan-root" class="hidden"></div>
+    <div id="ticker" class="ticker"></div>
+    <div id="intro" class="intro hidden">
+      <div class="intro-inner">
+        <div class="intro-kicker">DIGITAL TWIN · IDC</div>
+        <h1 class="intro-title">IDC 智能运维管理平台</h1>
+        <p class="intro-sub">三维机房数字孪生 · 语音巡检助手「小维」</p>
+        <div class="intro-bar"><i></i></div>
+        <div class="intro-hint">点击任意位置跳过片头</div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="statusbar">
+    <div class="kpis" id="kpis">
+      <div class="kpi"><b id="kpi-rack">42</b><span>机柜总数</span></div>
+      <div class="kpi"><b id="kpi-power">32.6<span class="unit">kW</span></b><span>总功耗</span></div>
+      <div class="kpi"><b id="kpi-pue">1.36</b><span>PUE</span></div>
+      <div class="kpi"><b id="kpi-avail">99.99<span class="unit">%</span></b><span>可用率</span></div>
+    </div>
+    <div class="sb-tip" id="sb-tip">本地演示数据 · 示例数据 · 非真实机房上线系统</div>
+    <button class="mic-btn" id="btn-mic"><i class="mic-ico"></i><span>进入三维巡检</span></button>
+  </footer>
+
+  <div id="toast-root"></div>
+</div>
+<!-- 启动器：
+     ① 优先加载打包产物 dist/app.js（file:// 双击 index.html 的场景需要它）；
+     ② 纯源码仓库（未构建）时自动回退到 ES 模块源码 src/app.js —— 需 http/localhost 环境（start.bat）。 -->
+<script>
+(function () {
+  var bundle = document.createElement("script");
+  bundle.src = "dist/app.js";
+  bundle.onerror = function () {
+    if (location.protocol === "file:") {
+      console.warn("[IDC] 未找到 dist/app.js：file:// 双击方式需要先构建（node scripts/build.mjs 或 npm run build）；" +
+                   "或改用 start.bat 启动（http://localhost，可直接跑源码模块）。");
+      var tip = document.createElement("div");
+      tip.style.cssText = "position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;padding:18px 24px;background:#0a1524;border:1px solid rgba(64,180,255,.3);border-radius:4px;color:#dce9ff;font:14px/1.8 'Microsoft YaHei',sans-serif;max-width:560px";
+      tip.innerHTML = "<b>尚未构建</b><br>本仓库只包含源码（不含构建产物）。两种运行方式：<br>" +
+        "① 双击 <b>start.bat</b>（推荐，直接以 ES 模块运行源码）<br>" +
+        "② 先执行 <b>node scripts/build.mjs</b>（需先 pnpm install / npm install），再双击 index.html";
+      document.body.appendChild(tip);
+      return;
+    }
+    var src = document.createElement("script");
+    src.type = "module"; src.src = "src/app.js";
+    document.body.appendChild(src);
+  };
+  document.body.appendChild(bundle);
+})();
+</script>
+</body>
+</html>

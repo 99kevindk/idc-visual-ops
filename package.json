@@ -1,0 +1,20 @@
+{
+  "name": "idc-visual-ops",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IDC 可视化运维项目（IDC Visual Ops）：3D 机房数字孪生 + 数据大屏 + 动环监控网关(Modbus/SNMP/MQTT) + 图元图纸编辑器 + 语音巡检助手",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:min": "node scripts/build.mjs --minify",
+    "serve": "node scripts/start.mjs 8123",
+    "dev": "node scripts/build.mjs && node scripts/start.mjs 8123",
+    "shot": "node scripts/shot.mjs --w 1440 --h 810 --wait 3000",
+    "shots": "node scripts/allshots.mjs",
+    "gateway": "node tools/gateway/server.mjs --port 8124 --driver sim"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "puppeteer-core": "^25.12.0"
+  }
+}
