@@ -1,22 +1,52 @@
-# IDC 可视化运维项目
+<div align="center">
 
-> **中文名**：IDC 可视化运维项目 ｜ **英文名**：IDC Visual Ops（IDC Visual Operations & Maintenance Platform）
-> **软件产品名（界面内品牌）**：IDC 智能运维管理平台 —— 项目名与产品名刻意分开：项目是这套开源工程，产品是界面里的大屏平台。
+<img src="docs/images/header.png" alt="IDC 可视化运维项目 · IDC Visual Ops" width="100%" />
 
-> **许可**：**AGPL-3.0-or-later** —— 可免费使用（含商用），但衍生作品必须开源、且以网络服务形式提供时须向用户提供源码；
-> **闭源商业集成 / SaaS 托管 / 免开源义务请联系作者购买商业授权**（见 [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md)）。
+### 三维机房数字孪生 · 数据大屏 · 动力环境监控 · 二维图纸图元库
 
-参照抖音「瞎话话 · 我用 Codex 搓了个能语音巡检的机房」还原的同款功能软件：
-**纯前端、离线可跑**的三维机房数字孪生 + 语音巡检助手「小维」。
+一个**纯前端、离线可跑**的 IDC 可视化运维平台：42 台机柜的 PBR 拟真数字孪生、9 页运维大屏、
+面向机房的**动环（动力环境）系统对接**、58 个图元构成的二维图纸编辑器，以及会说会走的语音巡检助手「小维」。
 
-> 全部为**本地示例数据**，非真实机房上线系统；无后端、无外网依赖、不上传任何数据。
-> 本地运行方式见下方「一、快速开始」；项目结构/依赖关系见 `docs/项目图谱.md`。
+<sub>运行时零第三方依赖 · 无需构建与后端 · 全部本地示例数据，不上传任何内容</sub>
+
+![Three.js r169](https://img.shields.io/badge/Three.js-r169-0f172a?logo=threedotjs&logoColor=22d3ee)
+![零运行时依赖](https://img.shields.io/badge/%E8%BF%90%E8%A1%8C%E6%97%B6%E4%BE%9D%E8%B5%96-0-22c55e)
+![纯前端](https://img.shields.io/badge/%E7%BA%AF%E5%89%8D%E7%AB%AF-WebGL2%20%C2%B7%20Canvas%202D-22d3ee)
+![平台](https://img.shields.io/badge/%E5%B9%B3%E5%8F%B0-Windows%20%C2%B7%20macOS%20%C2%B7%20Linux%20%C2%B7%20%E7%8E%B0%E4%BB%A3%E6%B5%8F%E8%A7%88%E5%99%A8-2f7fe8)
+![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-AGPL--3.0--or--later-blue)
+![商业授权](https://img.shields.io/badge/%E5%95%86%E4%B8%9A%E6%8E%88%E6%9D%83-%E5%8F%A6%E8%AE%AE-0d9488)
+![状态](https://img.shields.io/badge/%E7%8A%B6%E6%80%81-%E6%8A%80%E6%9C%AF%E6%BC%94%E7%A4%BA%20demo-f5a524)
+
+[![GitHub stars](https://img.shields.io/github/stars/99kevindk/idc-visual-ops?style=social)](https://github.com/99kevindk/idc-visual-ops/stargazers)
+<br/>
+[![Star 支持](https://img.shields.io/badge/%E2%AD%90%20Star%20%E6%94%AF%E6%8C%81-%E7%82%B9%E4%B8%AA%E6%98%9F-2f7fe8?style=for-the-badge&logo=github&logoColor=white)](https://github.com/99kevindk/idc-visual-ops/stargazers)
+[![商业授权说明](https://img.shields.io/badge/%F0%9F%92%BC%20%E5%95%86%E4%B8%9A%E6%8E%88%E6%9D%83-%E6%9F%A5%E7%9C%8B%E8%AF%B4%E6%98%8E-0d9488?style=for-the-badge)](COMMERCIAL-LICENSE.md)
+
+[快速开始](#一快速开始) · [功能对照](#二功能对照与原视频一致) · [目录结构](#三目录结构) · [动环对接](#三点六动环动力环境系统对接) · [开发说明](#四开发说明) · [合规与许可](#八许可证与合规)
+<br/>
+[项目结构图谱](docs/项目图谱.md) · [动环接口规范](docs/动环接口规范.md) · [图元与图纸规范](docs/机房图纸与图元规范.md) · [商业授权](COMMERCIAL-LICENSE.md)
+
+<sub>中文名：IDC 可视化运维项目 ｜ 英文名：IDC Visual Ops（IDC Visual Operations & Maintenance Platform）</sub>
+<sub>界面内产品名：IDC 智能运维管理平台 —— 项目是这套开源工程，产品是界面里的大屏平台</sub>
+
+</div>
+
+![三维机房数字孪生](docs/images/04_room_overview.jpg)
+<sub><i>三维机房数字孪生：6 排 × 7 台机柜、镂空网孔门、架空地板、顶部桥架与吊顶灯盘、红色告警光柱 —— 全部由代码程序化建模（含贴图与材质），不含任何外部模型或图片资源</i></sub>
+
+> [!NOTE]
+> 本项目是一套**技术演示**：界面与动环数据均为**本地示例数据**，非真实机房上线系统（点表中的寄存器地址/OID/Topic 为演示值，不是任何厂家手册的摘录）。
+> 开源许可为 **AGPL-3.0-or-later**：可免费使用（含商用），但衍生作品必须开源，且以网络服务 / SaaS 形式提供给用户时须向用户提供对应源码；
+> **闭源商业集成、SaaS 托管，或需要免除开源义务 → 请联系作者获取商业授权**，详见 [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md)。
+
+| 🧩 **熟悉的运维信息架构** | ⚡ **零依赖 · 原生性能** | 🧊 **三维数字孪生** | 🛰️ **动环对接 + 语音巡检** |
+|:--|:--|:--|:--|
+| 总览 / 机房监控 / 资产管理 / 能效管理 / 告警中心 / 运维工单 / 动环监控 / 机房图纸，沿用机房运维的通用布局与术语 | 纯前端，运行时零第三方库（three.js r169 内置于 `vendor/`）；全部图表用 Canvas 2D 手绘，无图表库 | 机柜可开门查看 1U~42U 设备；PBR 材质 + 软阴影 + LOD；告警机柜红色光柱与地面光圈 | 零依赖 Node 网关对接 Modbus TCP/RTU、SNMP v2c、MQTT、HTTP-JSON；说「巡检 A-02」，小维会走过去、开门并播报 |
 
 ---
-
 ## 项目结构图谱
 
-> 由 `tools/arch/graph.mjs` **从源码静态分析自动生成**（模块依赖 / 事件总线 / 数据流 / 目录树 / 页面矩阵），改动代码后执行 `node tools/arch/graph.mjs` 即可刷新。
+> 下列图谱由「从源码静态分析」的脚本生成（生成器属工程化工具，按本项目约定不入库；图元/架构关系与源码一一对应）。
 
 | 产物 | 说明 |
 |---|---|
