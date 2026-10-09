@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/textures.js — 程序化 PBR 贴图与材质库（离线、零外部图片资源）
  *  用途：把机房/机柜从"低模示意"升级为"拟真三维"

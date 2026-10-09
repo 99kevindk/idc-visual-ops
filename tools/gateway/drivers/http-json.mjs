@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/drivers/http-json.mjs — 厂家 HTTP-JSON 南向驱动（零依赖）
  *  - 定时 GET 厂家 JSON 接口（可带 token / 自定义请求头 / URL 模板）
  *  - 按点表映射取值：point.addr(字符串路径) / point.key / point.id / point.mqtt

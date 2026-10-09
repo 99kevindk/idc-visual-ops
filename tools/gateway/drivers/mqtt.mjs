@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/drivers/mqtt.mjs — MQTT 3.1.1 南向驱动（零依赖）
  *  - 帧编解码：CONNECT / CONNACK / SUBSCRIBE / SUBACK / PUBLISH / PUBACK / PINGREQ / PINGRESP
  *  - 按点表 point.mqtt topic 映射（idc/<type>/<devId>/<key>），订阅前缀通配

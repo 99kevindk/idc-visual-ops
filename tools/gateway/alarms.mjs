@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/alarms.mjs — 动环报警规则引擎（规范 §1.3）
  *  - AI 越限：hiHi/hi/lo/loLo -> critical/warning，deadband 回差 + delay 持续确认
  *  - DI 变位：v !== normal（invert 时相反）；smoke/water=critical，bypass/ats=warning

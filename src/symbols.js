@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =============================================================================
  *  src/symbols.js — 机房图元库（2D 矢量符号库 + 可扩展注册机制）
  *  需求："机房图元元素，机房图形绘制，现有机房图形扩展"

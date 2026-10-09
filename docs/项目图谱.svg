@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="750" viewBox="0 0 1680 750" font-family="'Microsoft YaHei',sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" width="1680" height="816" viewBox="0 0 1680 816" font-family="'Microsoft YaHei',sans-serif">
 <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="rgba(34,211,238,.55)"/></marker></defs>
 <rect width="100%" height="100%" fill="#05080f"/>
 <text x="40" y="68" fill="#eaf9ff" font-size="17" letter-spacing="3">IDC 可视化运维项目 · 项目结构图谱</text>
 <text x="1640" y="68" fill="#5f7791" font-size="11" text-anchor="end">由 tools/arch/graph.mjs 从源码静态分析生成</text>
 <g><rect x="40" y="28" width="10" height="10" rx="2" fill="#2f7fe8"/><text x="56" y="37" fill="#9db6d4" font-size="11">入口与元信息</text></g><g><rect x="218" y="28" width="10" height="10" rx="2" fill="#22c55e"/><text x="234" y="37" fill="#9db6d4" font-size="11">数据与总线</text></g><g><rect x="396" y="28" width="10" height="10" rx="2" fill="#7c6cf0"/><text x="412" y="37" fill="#9db6d4" font-size="11">库（图元/材质/组件）</text></g><g><rect x="574" y="28" width="10" height="10" rx="2" fill="#22d3ee"/><text x="590" y="37" fill="#9db6d4" font-size="11">渲染与视图</text></g><g><rect x="752" y="28" width="10" height="10" rx="2" fill="#f5a524"/><text x="768" y="37" fill="#9db6d4" font-size="11">交互与编排</text></g><g><rect x="930" y="28" width="10" height="10" rx="2" fill="#8aa0bd"/><text x="946" y="37" fill="#9db6d4" font-size="11">动环南向网关（Node 源码）</text></g><g><rect x="1108" y="28" width="10" height="10" rx="2" fill="#5f7791"/><text x="1124" y="37" fill="#9db6d4" font-size="11">第三方运行时（three.js MIT）</text></g><g><rect x="1286" y="28" width="10" height="10" rx="2" fill="#5f7791"/><text x="1302" y="37" fill="#9db6d4" font-size="11">文档与其它</text></g>
-<g class="edges"><path class="edge import" data-from="src/app.js" data-to="src/data.js" d="M956.7441860465117,119 C596.046511627907,119 596.046511627907,119 235.34883720930233,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/scene3d.js" d="M956.7441860465117,119 C791.3953488372093,119 791.3953488372093,119 626.046511627907,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/hud.js" d="M956.7441860465117,119 C791.3953488372093,119 791.3953488372093,185 626.046511627907,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/xiaowei.js" d="M956.7441860465117,119 C889.0697674418604,119 889.0697674418604,185 821.3953488372093,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/donghuan.js" d="M956.7441860465117,119 C596.046511627907,119 596.046511627907,251 235.34883720930233,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/symbols.js" d="M956.7441860465117,119 C693.7209302325582,119 693.7209302325582,119 430.69767441860466,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/floorplan.js" d="M956.7441860465117,119 C791.3953488372093,119 791.3953488372093,251 626.046511627907,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/donghuan.js" data-to="src/pointtable.js" d="M370.69767441860466,251 C303.0232558139535,251 303.0232558139535,185 235.34883720930233,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/props.js" data-to="vendor/three.module.js" d="M566.046511627907,251 C889.0697674418604,251 889.0697674418604,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/props.js" data-to="src/textures.js" d="M566.046511627907,251 C498.37209302325584,251 498.37209302325584,185 430.69767441860466,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/three.module.js" d="M761.3953488372093,119 C986.7441860465117,119 986.7441860465117,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/OrbitControls.js" d="M761.3953488372093,119 C986.7441860465117,119 986.7441860465117,185 1212.093023255814,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/RoomEnvironment.js" d="M761.3953488372093,119 C986.7441860465117,119 986.7441860465117,251 1212.093023255814,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/textures.js" d="M761.3953488372093,119 C596.046511627907,119 596.046511627907,185 430.69767441860466,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/props.js" d="M761.3953488372093,119 C596.046511627907,119 596.046511627907,251 430.69767441860466,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/pointtable.js" d="M761.3953488372093,119 C498.37209302325584,119 498.37209302325584,185 235.34883720930233,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/textures.js" data-to="vendor/three.module.js" d="M566.046511627907,185 C889.0697674418604,185 889.0697674418604,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="src/pointtable.js" d="M1152.093023255814,119 C693.7209302325581,119 693.7209302325581,185 235.34883720930233,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/ws.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,251 1016.7441860465117,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/alarms.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,185 1016.7441860465117,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/sim.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,317 1016.7441860465117,317" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/modbus-tcp.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,383 1016.7441860465117,383" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/snmp.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,449 1016.7441860465117,449" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/mqtt.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,515 1016.7441860465117,515" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/http-json.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,581 1016.7441860465117,581" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="vendor/OrbitControls.js" data-to="vendor/three.module.js" d="M1347.4418604651162,185 C1279.7674418604652,185 1279.7674418604652,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="vendor/RoomEnvironment.js" data-to="vendor/three.module.js" d="M1347.4418604651162,251 C1279.7674418604652,251 1279.7674418604652,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/></g>
+<g class="edges"><path class="edge import" data-from="src/app.js" data-to="src/data.js" d="M956.7441860465117,119 C596.046511627907,119 596.046511627907,119 235.34883720930233,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/scene3d.js" d="M956.7441860465117,119 C791.3953488372093,119 791.3953488372093,119 626.046511627907,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/hud.js" d="M956.7441860465117,119 C791.3953488372093,119 791.3953488372093,185 626.046511627907,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/xiaowei.js" d="M956.7441860465117,119 C889.0697674418604,119 889.0697674418604,185 821.3953488372093,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/donghuan.js" d="M956.7441860465117,119 C596.046511627907,119 596.046511627907,251 235.34883720930233,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/symbols.js" d="M956.7441860465117,119 C693.7209302325582,119 693.7209302325582,119 430.69767441860466,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/app.js" data-to="src/floorplan.js" d="M956.7441860465117,119 C791.3953488372093,119 791.3953488372093,251 626.046511627907,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/donghuan.js" data-to="src/pointtable.js" d="M370.69767441860466,251 C303.0232558139535,251 303.0232558139535,185 235.34883720930233,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/props.js" data-to="vendor/three.module.js" d="M566.046511627907,251 C889.0697674418604,251 889.0697674418604,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/props.js" data-to="src/textures.js" d="M566.046511627907,251 C498.37209302325584,251 498.37209302325584,185 430.69767441860466,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/three.module.js" d="M761.3953488372093,119 C986.7441860465117,119 986.7441860465117,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/OrbitControls.js" d="M761.3953488372093,119 C986.7441860465117,119 986.7441860465117,185 1212.093023255814,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="vendor/RoomEnvironment.js" d="M761.3953488372093,119 C986.7441860465117,119 986.7441860465117,251 1212.093023255814,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/textures.js" d="M761.3953488372093,119 C596.046511627907,119 596.046511627907,185 430.69767441860466,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/props.js" d="M761.3953488372093,119 C596.046511627907,119 596.046511627907,251 430.69767441860466,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/scene3d.js" data-to="src/pointtable.js" d="M761.3953488372093,119 C498.37209302325584,119 498.37209302325584,185 235.34883720930233,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="src/textures.js" data-to="vendor/three.module.js" d="M566.046511627907,185 C889.0697674418604,185 889.0697674418604,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/pointtable.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,713 1016.7441860465117,713" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/ws.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,251 1016.7441860465117,251" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/alarms.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,185 1016.7441860465117,185" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/sim.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,317 1016.7441860465117,317" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/modbus-tcp.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,383 1016.7441860465117,383" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/snmp.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,449 1016.7441860465117,449" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/mqtt.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,515 1016.7441860465117,515" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="tools/gateway/server.mjs" data-to="tools/gateway/drivers/http-json.mjs" d="M1152.093023255814,119 C1084.4186046511627,119 1084.4186046511627,581 1016.7441860465117,581" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="vendor/OrbitControls.js" data-to="vendor/three.module.js" d="M1347.4418604651162,185 C1279.7674418604652,185 1279.7674418604652,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/><path class="edge import" data-from="vendor/RoomEnvironment.js" data-to="vendor/three.module.js" d="M1347.4418604651162,251 C1279.7674418604652,251 1279.7674418604652,119 1212.093023255814,119" fill="none" stroke="rgba(34,211,238,.42)" stroke-width="1.2" marker-end="url(#ar)"/></g>
 <g class="nodes"><g class="node" data-id="index.html">
     <rect x="40" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
     <rect x="40" y="96" width="4" height="46" rx="2" fill="#2f7fe8"/>
     <text x="54" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">index.html</text>
-    <text x="54" y="132" fill="#7f9ab8" font-size="10">97 行</text>
+    <text x="54" y="132" fill="#7f9ab8" font-size="10">104 行</text>
   </g><g class="node" data-id="src/base.css">
     <rect x="40" y="162" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
     <rect x="40" y="162" width="4" height="46" rx="2" fill="#2f7fe8"/>
     <text x="54" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">base.css</text>
-    <text x="54" y="198" fill="#7f9ab8" font-size="10">207 行</text>
+    <text x="54" y="198" fill="#7f9ab8" font-size="10">211 行</text>
   </g><g class="node" data-id=".gitignore">
     <rect x="40" y="228" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
     <rect x="40" y="228" width="4" height="46" rx="2" fill="#2f7fe8"/>
@@ -34,107 +34,117 @@
     <rect x="40" y="426" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
     <rect x="40" y="426" width="4" height="46" rx="2" fill="#2f7fe8"/>
     <text x="54" y="446" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">README.md</text>
-    <text x="54" y="462" fill="#7f9ab8" font-size="10">312 行</text>
+    <text x="54" y="462" fill="#7f9ab8" font-size="10">317 行</text>
+  </g><g class="node" data-id="COMMERCIAL-LICENSE.md">
+    <rect x="40" y="492" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#2f7fe8" stroke-width="1.4"/>
+    <rect x="40" y="492" width="4" height="46" rx="2" fill="#2f7fe8"/>
+    <text x="54" y="512" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">COMMERCIAL-LICENSE.md</text>
+    <text x="54" y="528" fill="#7f9ab8" font-size="10">60 行</text>
   </g><g class="node" data-id="src/data.js">
     <rect x="235.34883720930233" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#22c55e" stroke-width="1.4"/>
     <rect x="235.34883720930233" y="96" width="4" height="46" rx="2" fill="#22c55e"/>
     <text x="249.34883720930233" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">data.js</text>
-    <text x="249.34883720930233" y="132" fill="#7f9ab8" font-size="10">365 行 · 定义 bus,data</text>
+    <text x="249.34883720930233" y="132" fill="#7f9ab8" font-size="10">369 行 · 定义 bus,data</text>
   </g><g class="node" data-id="src/pointtable.js">
     <rect x="235.34883720930233" y="162" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#22c55e" stroke-width="1.4"/>
     <rect x="235.34883720930233" y="162" width="4" height="46" rx="2" fill="#22c55e"/>
     <text x="249.34883720930233" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">pointtable.js</text>
-    <text x="249.34883720930233" y="198" fill="#7f9ab8" font-size="10">262 行</text>
+    <text x="249.34883720930233" y="198" fill="#7f9ab8" font-size="10">266 行</text>
   </g><g class="node" data-id="src/donghuan.js">
     <rect x="235.34883720930233" y="228" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#22c55e" stroke-width="1.4"/>
     <rect x="235.34883720930233" y="228" width="4" height="46" rx="2" fill="#22c55e"/>
     <text x="249.34883720930233" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">donghuan.js</text>
-    <text x="249.34883720930233" y="264" fill="#7f9ab8" font-size="10">536 行 · 定义 dh</text>
+    <text x="249.34883720930233" y="264" fill="#7f9ab8" font-size="10">540 行 · 定义 dh</text>
   </g><g class="node" data-id="src/symbols.js">
     <rect x="430.69767441860466" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#7c6cf0" stroke-width="1.4"/>
     <rect x="430.69767441860466" y="96" width="4" height="46" rx="2" fill="#7c6cf0"/>
     <text x="444.69767441860466" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">symbols.js</text>
-    <text x="444.69767441860466" y="132" fill="#7f9ab8" font-size="10">2200 行 · 定义 symbols</text>
+    <text x="444.69767441860466" y="132" fill="#7f9ab8" font-size="10">2204 行 · 定义 symbols</text>
   </g><g class="node" data-id="src/textures.js">
     <rect x="430.69767441860466" y="162" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#7c6cf0" stroke-width="1.4"/>
     <rect x="430.69767441860466" y="162" width="4" height="46" rx="2" fill="#7c6cf0"/>
     <text x="444.69767441860466" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">textures.js</text>
-    <text x="444.69767441860466" y="198" fill="#7f9ab8" font-size="10">689 行</text>
+    <text x="444.69767441860466" y="198" fill="#7f9ab8" font-size="10">693 行</text>
   </g><g class="node" data-id="src/props.js">
     <rect x="430.69767441860466" y="228" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#7c6cf0" stroke-width="1.4"/>
     <rect x="430.69767441860466" y="228" width="4" height="46" rx="2" fill="#7c6cf0"/>
     <text x="444.69767441860466" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">props.js</text>
-    <text x="444.69767441860466" y="264" fill="#7f9ab8" font-size="10">224 行</text>
+    <text x="444.69767441860466" y="264" fill="#7f9ab8" font-size="10">228 行</text>
   </g><g class="node" data-id="src/scene3d.js">
     <rect x="626.046511627907" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#22d3ee" stroke-width="1.4"/>
     <rect x="626.046511627907" y="96" width="4" height="46" rx="2" fill="#22d3ee"/>
     <text x="640.046511627907" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">scene3d.js</text>
-    <text x="640.046511627907" y="132" fill="#7f9ab8" font-size="10">2079 行 · 定义 scene</text>
+    <text x="640.046511627907" y="132" fill="#7f9ab8" font-size="10">2083 行 · 定义 scene</text>
   </g><g class="node" data-id="src/hud.js">
     <rect x="626.046511627907" y="162" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#22d3ee" stroke-width="1.4"/>
     <rect x="626.046511627907" y="162" width="4" height="46" rx="2" fill="#22d3ee"/>
     <text x="640.046511627907" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">hud.js</text>
-    <text x="640.046511627907" y="198" fill="#7f9ab8" font-size="10">2221 行 · 定义 data,hud</text>
+    <text x="640.046511627907" y="198" fill="#7f9ab8" font-size="10">2225 行 · 定义 data,hud</text>
   </g><g class="node" data-id="src/floorplan.js">
     <rect x="626.046511627907" y="228" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#22d3ee" stroke-width="1.4"/>
     <rect x="626.046511627907" y="228" width="4" height="46" rx="2" fill="#22d3ee"/>
     <text x="640.046511627907" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">floorplan.js</text>
-    <text x="640.046511627907" y="264" fill="#7f9ab8" font-size="10">1006 行 · 定义 plan</text>
+    <text x="640.046511627907" y="264" fill="#7f9ab8" font-size="10">1010 行 · 定义 plan</text>
   </g><g class="node" data-id="src/app.js">
     <rect x="821.3953488372093" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#f5a524" stroke-width="1.4"/>
     <rect x="821.3953488372093" y="96" width="4" height="46" rx="2" fill="#f5a524"/>
     <text x="835.3953488372093" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">app.js</text>
-    <text x="835.3953488372093" y="132" fill="#7f9ab8" font-size="10">245 行 · 定义 app</text>
+    <text x="835.3953488372093" y="132" fill="#7f9ab8" font-size="10">249 行 · 定义 app</text>
   </g><g class="node" data-id="src/xiaowei.js">
     <rect x="821.3953488372093" y="162" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#f5a524" stroke-width="1.4"/>
     <rect x="821.3953488372093" y="162" width="4" height="46" rx="2" fill="#f5a524"/>
     <text x="835.3953488372093" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">xiaowei.js</text>
-    <text x="835.3953488372093" y="198" fill="#7f9ab8" font-size="10">1214 行 · 定义 xiaowei</text>
+    <text x="835.3953488372093" y="198" fill="#7f9ab8" font-size="10">1218 行 · 定义 xiaowei</text>
   </g><g class="node" data-id="tools/gateway/server.mjs">
     <rect x="1016.7441860465117" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="96" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="116" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/server.mjs</text>
-    <text x="1030.7441860465117" y="132" fill="#7f9ab8" font-size="10">491 行</text>
+    <text x="1030.7441860465117" y="132" fill="#7f9ab8" font-size="10">494 行</text>
   </g><g class="node" data-id="tools/gateway/alarms.mjs">
     <rect x="1016.7441860465117" y="162" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="162" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="182" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/alarms.mjs</text>
-    <text x="1030.7441860465117" y="198" fill="#7f9ab8" font-size="10">219 行</text>
+    <text x="1030.7441860465117" y="198" fill="#7f9ab8" font-size="10">222 行</text>
   </g><g class="node" data-id="tools/gateway/ws.mjs">
     <rect x="1016.7441860465117" y="228" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="228" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="248" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/ws.mjs</text>
-    <text x="1030.7441860465117" y="264" fill="#7f9ab8" font-size="10">286 行</text>
+    <text x="1030.7441860465117" y="264" fill="#7f9ab8" font-size="10">289 行</text>
   </g><g class="node" data-id="tools/gateway/drivers/sim.mjs">
     <rect x="1016.7441860465117" y="294" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="294" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="314" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/sim.mjs</text>
-    <text x="1030.7441860465117" y="330" fill="#7f9ab8" font-size="10">305 行</text>
+    <text x="1030.7441860465117" y="330" fill="#7f9ab8" font-size="10">308 行</text>
   </g><g class="node" data-id="tools/gateway/drivers/modbus-tcp.mjs">
     <rect x="1016.7441860465117" y="360" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="360" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="380" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/modbus-tcp.mjs</text>
-    <text x="1030.7441860465117" y="396" fill="#7f9ab8" font-size="10">267 行</text>
+    <text x="1030.7441860465117" y="396" fill="#7f9ab8" font-size="10">270 行</text>
   </g><g class="node" data-id="tools/gateway/drivers/snmp.mjs">
     <rect x="1016.7441860465117" y="426" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="426" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="446" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/snmp.mjs</text>
-    <text x="1030.7441860465117" y="462" fill="#7f9ab8" font-size="10">259 行</text>
+    <text x="1030.7441860465117" y="462" fill="#7f9ab8" font-size="10">262 行</text>
   </g><g class="node" data-id="tools/gateway/drivers/mqtt.mjs">
     <rect x="1016.7441860465117" y="492" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="492" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="512" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/mqtt.mjs</text>
-    <text x="1030.7441860465117" y="528" fill="#7f9ab8" font-size="10">278 行</text>
+    <text x="1030.7441860465117" y="528" fill="#7f9ab8" font-size="10">281 行</text>
   </g><g class="node" data-id="tools/gateway/drivers/http-json.mjs">
     <rect x="1016.7441860465117" y="558" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="558" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="578" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/drivers/http-json.mjs</text>
-    <text x="1030.7441860465117" y="594" fill="#7f9ab8" font-size="10">173 行</text>
+    <text x="1030.7441860465117" y="594" fill="#7f9ab8" font-size="10">176 行</text>
   </g><g class="node" data-id="tools/gateway/test.mjs">
     <rect x="1016.7441860465117" y="624" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
     <rect x="1016.7441860465117" y="624" width="4" height="46" rx="2" fill="#8aa0bd"/>
     <text x="1030.7441860465117" y="644" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/test.mjs</text>
-    <text x="1030.7441860465117" y="660" fill="#7f9ab8" font-size="10">325 行</text>
+    <text x="1030.7441860465117" y="660" fill="#7f9ab8" font-size="10">328 行</text>
+  </g><g class="node" data-id="tools/gateway/pointtable.mjs">
+    <rect x="1016.7441860465117" y="690" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#8aa0bd" stroke-width="1.4"/>
+    <rect x="1016.7441860465117" y="690" width="4" height="46" rx="2" fill="#8aa0bd"/>
+    <text x="1030.7441860465117" y="710" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">gw/pointtable.mjs</text>
+    <text x="1030.7441860465117" y="726" fill="#7f9ab8" font-size="10">25 行</text>
   </g><g class="node" data-id="vendor/three.module.js">
     <rect x="1212.093023255814" y="96" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
     <rect x="1212.093023255814" y="96" width="4" height="46" rx="2" fill="#5f7791"/>
@@ -184,16 +194,16 @@
     <rect x="1407.4418604651164" y="426" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
     <rect x="1407.4418604651164" y="426" width="4" height="46" rx="2" fill="#5f7791"/>
     <text x="1421.4418604651164" y="446" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/项目图谱.html</text>
-    <text x="1421.4418604651164" y="462" fill="#7f9ab8" font-size="10">250 行</text>
+    <text x="1421.4418604651164" y="462" fill="#7f9ab8" font-size="10">260 行</text>
   </g><g class="node" data-id="docs/项目图谱.md">
     <rect x="1407.4418604651164" y="492" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
     <rect x="1407.4418604651164" y="492" width="4" height="46" rx="2" fill="#5f7791"/>
     <text x="1421.4418604651164" y="512" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">docs/项目图谱.md</text>
-    <text x="1421.4418604651164" y="528" fill="#7f9ab8" font-size="10">269 行</text>
+    <text x="1421.4418604651164" y="528" fill="#7f9ab8" font-size="10">271 行</text>
   </g><g class="node" data-id="src/styles.css">
     <rect x="1407.4418604651164" y="558" width="135.34883720930233" height="46" rx="7" fill="#0d1a29" stroke="#5f7791" stroke-width="1.4"/>
     <rect x="1407.4418604651164" y="558" width="4" height="46" rx="2" fill="#5f7791"/>
     <text x="1421.4418604651164" y="578" fill="#eaf9ff" font-size="13" font-family="Consolas,monospace">styles.css</text>
-    <text x="1421.4418604651164" y="594" fill="#7f9ab8" font-size="10">605 行</text>
+    <text x="1421.4418604651164" y="594" fill="#7f9ab8" font-size="10">609 行</text>
   </g></g>
 </svg>

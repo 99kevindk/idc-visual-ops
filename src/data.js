@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/data.js  —  IDC 智能运维管理平台 · 本地模拟数据模型 + 事件总线
  *  纯前端演示数据（非真实机房数据），所有数值由确定性伪随机数生成。

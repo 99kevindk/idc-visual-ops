@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/test.mjs — 动环网关自测（零依赖）
  *   覆盖：① WS 握手 + hello   ② >=3 轮 data   ③ inject 烟感后收到 alarm
  *         ④ /dh/health、/dh/points.csv 正常   ⑤ driver 切换报错处理
@@ -262,7 +265,7 @@ console.log("");
 console.log("协议编解码自测（Modbus-TCP / SNMP / MQTT / HTTP-JSON）");
 console.log("------------------------------------------------------------");
 try {
-  const PT = await import("../../src/pointtable.js");
+  const PT = await import("./pointtable.mjs");
   const MB = await import("./drivers/modbus-tcp.mjs");
   check("Modbus 地址解析（40001/30001 -> offset 0，FC03/FC04）",
     MB.toOffset(40001) === 0 && MB.toOffset(30001) === 0 && MB.fcFor({ addr: 30001 }) === 4 && MB.fcFor({ addr: 40001 }) === 3,

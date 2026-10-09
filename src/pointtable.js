@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/pointtable.js — 动环（动力环境）设备点表：网关(Node) 与前端(浏览器) 共用同一份定义
  *  - 纯数据 + 纯函数，无任何依赖（Node 可直接 import）

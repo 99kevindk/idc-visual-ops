@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/donghuan.js — 动环（动力环境）前端接入模块
  *  职责：①连动环网关(WebSocket/HTTP)取实时数据 ②网关不在时用内置模拟器等价跑通

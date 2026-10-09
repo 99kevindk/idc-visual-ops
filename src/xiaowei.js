@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/xiaowei.js — 语音巡检助手「小维」
  *  纯前端 · 离线 · 本地规则引擎：Web Speech API 识别 + speechSynthesis 播报

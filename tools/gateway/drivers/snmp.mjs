@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/drivers/snmp.mjs — SNMP v2c GET 南向驱动（零依赖）
  *  - BER/DER 编解码：SEQUENCE / INTEGER / OCTET STRING / NULL / OID / Counter32
  *    / Gauge32 / TimeTicks / Counter64 / IpAddress

@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/floorplan.js — 机房二维图纸（平面图）：图元绘制、编辑、导出、与 3D 联动
  *  · 数据源：IDC.data.racks（42 台机柜真实坐标）/ src/pointtable.js（39 台动环设备 place）

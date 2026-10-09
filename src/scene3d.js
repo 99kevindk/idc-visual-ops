@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/scene3d.js — IDC 智能运维管理平台 · Three.js 三维机房数字孪生（拟真 PBR 版）
  *  依赖：three r169 / OrbitControls / textures.js(程序化 PBR 贴图) / props.js(机房家具)

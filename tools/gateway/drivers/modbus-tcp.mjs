@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/drivers/modbus-tcp.mjs — Modbus TCP 南向驱动（零依赖）
  *  - MBAP 头（事务号/协议号/长度/单元号）+ 功能码 03/04 批量读
  *  - 按点表 addr(4xxxx 保持 / 3xxxx 输入) + dtype(uint16/int16/uint32/int32/float32/bit)

@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/ws.mjs — 极简 WebSocket 服务端（RFC6455，纯 Node 标准库）
  *  - 握手：Sec-WebSocket-Accept = base64(sha1(clientKey + GUID))
  *  - 帧解析：7/16/64 位长度、掩码解掩、TEXT/BIN/CONT/PING/PONG/CLOSE、分片重组

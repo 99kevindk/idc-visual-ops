@@ -3,6 +3,9 @@
 > **中文名**：IDC 可视化运维项目 ｜ **英文名**：IDC Visual Ops（IDC Visual Operations & Maintenance Platform）
 > **软件产品名（界面内品牌）**：IDC 智能运维管理平台 —— 项目名与产品名刻意分开：项目是这套开源工程，产品是界面里的大屏平台。
 
+> **许可**：**AGPL-3.0-or-later** —— 可免费使用（含商用），但衍生作品必须开源、且以网络服务形式提供时须向用户提供源码；
+> **闭源商业集成 / SaaS 托管 / 免开源义务请联系作者购买商业授权**（见 [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md)）。
+
 参照抖音「瞎话话 · 我用 Codex 搓了个能语音巡检的机房」还原的同款功能软件：
 **纯前端、离线可跑**的三维机房数字孪生 + 语音巡检助手「小维」。
 
@@ -295,13 +298,15 @@ AI 越限 `hi/hiHi/lo/loLo` + **回差 deadband** + **持续延时确认**；DI 
 
 | 文档 | 内容 |
 |---|---|
-| [LICENSE](LICENSE) | 本项目采用 **MIT** 许可证 |
+| [LICENSE](LICENSE) | 本项目采用 **AGPL-3.0-or-later**（GNU Affero 通用公共许可证 v3 或更新版本） |
+| [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md) | **商业双授权说明**：什么情况必须购买商业授权、授权范围、联系方式、贡献者 CLA、商标声明 |
 | [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) | 第三方组件清单：three.js r169（MIT，vendor/）、esbuild（MIT，开发期）、puppeteer-core（Apache-2.0，开发期） |
 | [vendor/LICENSE-three.txt](vendor/LICENSE-three.txt) | three.js 的 MIT 许可全文（覆盖未自带声明的 OrbitControls / RoomEnvironment） |
 | [docs/合规与许可说明.md](docs/合规与许可说明.md) | **合规体检报告**：协议授权状态、商标与素材、点表保密、语音识别数据出境、公开前自查清单 |
 
 **要点（详见合规文档）**
 
+- 🔑 **双授权模式**：开源用 AGPL-3.0-or-later（强 copyleft，网络服务也必须开源），商业闭源集成/SaaS 托管走商业授权 —— 这是 MySQL / Grafana / Nextcloud 一类项目的通行做法。
 - 🟢 **协议零风险**：Modbus TCP/RTU、SNMP v2c、MQTT 3.1.1、HTTP/WebSocket 均为公开标准，本项目**按规范自行实现客户端**，未使用任何厂家 SDK，无授权费、无 copyleft。
 - 🟡 **需保留署名**：three.js 系 MIT，已保留文件头许可并补充 `vendor/LICENSE-three.txt`（合规动作已完成）。
 - 🟡 **素材不入库**：参考视频与抽帧图（`ref/`）已被 `.gitignore` 排除，避免重新分发第三方视频。

@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/props.js — 机房拟真组件库（精密空调 / UPS / 配电柜 / 电池柜 / 门禁 /
  *                 摄像头 / 灭火器 / 吊顶灯盘 / 监控大屏 / KVM 控制台 / 温湿度传感器）

@@ -1,4 +1,5 @@
 <!doctype html>
+<!-- SPDX-License-Identifier: AGPL-3.0-or-later · IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk · 闭源商业集成 / SaaS 托管需商业授权（见 COMMERCIAL-LICENSE.md） -->
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8" />
@@ -71,26 +72,32 @@
 
   <div id="toast-root"></div>
 </div>
-<!-- 启动器：① 优先加载打包产物 dist/app.js（file:// 双击 index.html 场景）；
-     ② 纯源码仓库（未构建）时回退到 ES 模块源码 src/app.js —— 需 http/localhost 环境（任意静态服务器） -->
+<!-- 启动器：
+     · http/https（含 localhost，源码运行的标准方式）→ 直接以 ES 模块加载 src/app.js；
+     · file:// 双击 index.html → ES 模块会被浏览器拦截，改为加载打包产物 dist/app.js（本仓库不含构建产物，
+       若不存在会给出明确提示：请用任意静态服务器以 http://localhost 打开）。 -->
 <script>
 (function () {
-  var bundle = document.createElement("script");
-  bundle.src = "dist/app.js";
-  bundle.onerror = function () {
-    if (location.protocol === "file:") {
-      console.warn("[IDC] 未找到 dist/app.js：本仓库只包含源码，请用任意静态服务器以 http://localhost 方式打开（ES 模块在 file:// 下会被浏览器拦截）。");
+  function loadModule() {
+    var m = document.createElement("script");
+    m.type = "module"; m.src = "src/app.js";
+    document.body.appendChild(m);
+  }
+  function loadBundleOrHint() {
+    var b = document.createElement("script");
+    b.src = "dist/app.js";
+    b.onerror = function () {
+      console.warn("[IDC] file:// 场景未找到 dist/app.js：本仓库只包含项目源码（不含构建产物），请用任意静态服务器以 http://localhost 方式打开。");
       var tip = document.createElement("div");
-      tip.style.cssText = "position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;padding:18px 24px;background:#0a1524;border:1px solid rgba(64,180,255,.3);border-radius:4px;color:#dce9ff;font:14px/1.8 'Microsoft YaHei',sans-serif;max-width:560px";
-      tip.innerHTML = "<b>请用 http://localhost 方式打开</b><br>本仓库只包含项目源码（不含构建产物与启动脚本），ES 模块无法在 file:// 下加载。<br>用任意静态服务器即可：<b>python -m http.server 8123</b> 或 <b>npx serve -l 8123</b>（VS Code Live Server 亦可），然后访问 http://localhost:8123/";
+      tip.style.cssText = "position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:99;padding:18px 24px;background:#0a1524;border:1px solid rgba(64,180,255,.3);border-radius:4px;color:#dce9ff;font:14px/1.8 'Microsoft YaHei',sans-serif;max-width:600px";
+      tip.innerHTML = "<b>请用 http://localhost 方式打开</b><br>本仓库只包含项目源码（不含构建产物与启动脚本），ES 模块在 file:// 下会被浏览器拦截。<br>" +
+        "用任意静态服务器即可：<b>python -m http.server 8123</b> 或 <b>npx serve -l 8123</b>（VS Code Live Server 亦可），然后访问 http://localhost:8123/";
       document.body.appendChild(tip);
-      return;
-    }
-    var src = document.createElement("script");
-    src.type = "module"; src.src = "src/app.js";
-    document.body.appendChild(src);
-  };
-  document.body.appendChild(bundle);
+    };
+    document.body.appendChild(b);
+  }
+  if (location.protocol === "file:") loadBundleOrHint();
+  else loadModule();
 })();
 </script>
 </body>

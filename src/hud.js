@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ */
 /* =========================================================================
  *  src/hud.js — 【ui-hud】六大页面 HUD：深色科技风面板 + Canvas 2D 手绘图表
  *  只依赖 window.IDC 命名空间（IDC.data / IDC.bus / IDC.scene / IDC.xiaowei），

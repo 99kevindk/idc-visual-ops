@@ -1,4 +1,7 @@
-/* =========================================================================
+/* SPDX-License-Identifier: AGPL-3.0-or-later
+ * IDC 可视化运维项目（IDC Visual Ops）· Copyright (c) 2026 99kevindk
+ * 本文件以 AGPL-3.0-or-later 开源；闭源商业集成 / SaaS 托管需另行取得商业授权（见 COMMERCIAL-LICENSE.md）。
+ *//* =========================================================================
  * tools/gateway/server.mjs — 动环南向采集网关入口（纯 Node 标准库，零依赖）
  *
  *   启动：node tools/gateway/server.mjs --port 8124 --driver sim [--poll 2000]
@@ -9,7 +12,7 @@
  *   - 采集主循环 + 报警引擎（规范 §1.3），点表唯一数据源 src/pointtable.js
  * ========================================================================= */
 import http from "node:http";
-import * as PT from "../../src/pointtable.js";
+import * as PT from "./pointtable.mjs";
 import { WebSocketServer } from "./ws.mjs";
 import { AlarmEngine, LEVEL_RANK } from "./alarms.mjs";
 import { createSimDriver } from "./drivers/sim.mjs";
