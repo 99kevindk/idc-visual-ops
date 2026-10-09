@@ -101,9 +101,7 @@
 ## 5. 代码结构与接口契约（严格遵守，便于并行开发）
 ```
 index.html            入口（脚本/样式引用，加载 dist/app.js 或 src/app.js）
-scripts/build.mjs     esbuild 打包（src/app.js -> dist/app.js）
 scripts/shot.mjs      headless Chrome 截图（QA 用）
-start.bat             本地静态服务 + 打开浏览器（可选）
 src/app.js            【Lead】主循环、页面路由、镜头编排、模块装配
 src/data.js           【Lead】模拟数据模型 + 事件总线
 src/scene3d.js        【viz-3d】Three.js 场景
@@ -191,7 +189,7 @@ IDC.xiaowei.wakeWordEnabled     // 语音唤醒开关（默认 false）
 ```
 
 ## 6. 验收标准
-- 双击 `index.html`（或运行 start.bat）即可离线运行，无控制台报错，1440x810 下布局不溢出。
+- 构建后双击 `index.html`，或用任意静态服务器以 http://localhost 打开，均无控制台报错、1440×810 下布局不溢出。
 - 6 个页签均可切换且内容与上表一致；总览页 3D 可鼠标旋转/缩放。
 - 点击机柜 → 高亮 + 弹出信息 + 镜头对准；机房监控页可看开门后的 U 位设备。
 - 语音/文字指令 "巡检 A-02"、"当前告警"、"检查电力数据"、"怎么处理"、"生成工单"、"现场处理完成" 均能得到相应 3D 动作 + 文字 + 语音播报。

@@ -7,7 +7,7 @@
 **纯前端、离线可跑**的三维机房数字孪生 + 语音巡检助手「小维」。
 
 > 全部为**本地示例数据**，非真实机房上线系统；无后端、无外网依赖、不上传任何数据。
-> 启动遇到问题见 **`docs/启动与故障排查.md`**。
+> 本地运行方式见下方「一、快速开始」；项目结构/依赖关系见 `docs/项目图谱.md`。
 
 ---
 
@@ -25,7 +25,7 @@
 架构一览（详见图谱文档）：
 
 ```
-外壳入口(index.html/start.bat) → 编排层(app.js/xiaowei.js)
+外壳入口(index.html) → 编排层(app.js/xiaowei.js)
                                   ↓
         视图层(scene3d.js 3D · hud.js 大屏 · floorplan.js 图纸)
                                   ↓
@@ -56,25 +56,18 @@
 
 | 目录 | 是否入库 | 说明 |
 |---|---|---|
-| `src/` `tools/` `scripts/` `vendor/` `docs/` `index.html` `start.bat` | ✅ | 全部源码与文档（41 个自研文件 / 约 1.7 万行；vendor 为 three.js r169 等第三方） |
-| `dist/` | ❌ | esbuild 打包产物（构建生成，不入库）；`start.bat` 直接跑源码，`npm run build` 可生成 |
-| `docs/images/` | ✅ | 18 张精选界面截图（JPEG，2.2MB） |
-| `node_modules/` | ❌ | 仅开发需要：`pnpm install`（esbuild + puppeteer-core，用于打包与无头截图 QA）；源码模式运行不需要 |
-| `ref/` | ❌ | 参考视频与抽帧素材（抖音原片，含版权，不入库）；规范见 `docs/REQUIREMENTS.md` |
-| `shots/` | ❌ | 开发期全量截图；`npm run shots` 可一键重新生成 |
-
+| `src/` `tools/` `scripts/` `vendor/` `docs/` `index.html` | ✅ | 全部源码与文档（41 个自研文件 / 约 1.7 万行；vendor 为 three.js r169 等第三方） |
+| `dist/` | ❌ | esbuild 打包产物（构建生成，不入库）；源码模式用任意静态服务器即可，`| `docs/images/` | ✅ | 18 张精选界面截图（JPEG，2.2MB） |
+| `docs/images/` | ✅ | 18 张精选界面截图（文档配图） |
 ```bash
-# 克隆后 30 秒跑起来（零构建）
+# 克隆后 30 秒跑起来（纯源码，零依赖）
 git clone <repo> && cd idc-visual-ops
-start.bat                 # Windows：起服务 + 动环网关，浏览器自动打开（源码 ES 模块直接运行）
+python -m http.server 8123        # 任意静态服务器即可（npx serve -l 8123 / VS Code Live Server…）
+# 浏览器打开 http://localhost:8123/
 
-# 或者（手动）
-node scripts/start.mjs 8123                 # 纯静态服务（源码模式）
-node tools/gateway/server.mjs --port 8124 --driver sim   # 需要动环数据时
-# 浏览器打开 http://localhost:8123/   （要连网关就加 ?gw=1）
-
-# file:// 双击 index.html 的玩法需要先构建
-pnpm install && npm run build
+# 需要动环实时数据时（另开终端）
+node tools/gateway/server.mjs --port 8124 --driver sim
+# 浏览器打开 http://localhost:8123/?gw=1
 ```
 
 ---
@@ -83,41 +76,26 @@ pnpm install && npm run build
 
 > **本仓库只包含源码**（构建产物 `dist/` 已按 `.gitignore` 排除），因此有三种运行方式：
 
-### 方式 1（推荐，零构建）：双击 `start.bat`
+### 方式 1（推荐）：用任意静态服务器跑源码（无需安装依赖、无需打包）
 
-`start.bat` 会起本地静态服务（`http://localhost:8123`）并**直接以 ES 模块加载 `src/` 源码**——
-**无需安装依赖、无需打包**；若检测到 `node_modules/esbuild` 还会顺手生成 `dist/app.js`。
-同时它会自动拉起动环网关（`:8124`）并以 `?gw=1` 打开页面。
-
-```
-URL: http://localhost:8123/
-Runtime: Node.js / Python / PowerShell built-in server
-```
-
-- **控制台窗口要保持开着**（它就是服务本身）；浏览器没自动弹出就手动访问上面的 URL。
-- 语音识别需要 `http://localhost` 安全上下文；`file://` 不行。
-
-### 方式 2（file:// 双击 index.html）：需先构建
-
-双击 `index.html` 属于 `file://` 场景，ES 模块会被浏览器 CORS 拦截，所以需要打包产物：
+本仓库**只有源码**（构建产物 `dist/` 不入库）。源码以 ES 模块组织，因此需要一个 http 环境（`file://` 会被浏览器 CORS 拦截）：
 
 ```bash
-pnpm install            # 或 npm install（只装 esbuild 等开发依赖）
-npm run build           # 生成 dist/app.js（单文件，可直接双击运行）
+# 任选一种（都在项目根目录执行）
+python -m http.server 8123          # Python 3
+npx --yes serve -l 8123             # Node
+php -S localhost:8123               # PHP
+# 或用 VS Code 的 Live Server 插件 / IDEA 内置静态服务器
 ```
 
-构建后再双击 `index.html` 即可；若未构建，页面会给出明确提示而不是白屏。
+然后浏览器打开 **http://localhost:8123/**（语音识别要求 `http://localhost` 安全上下文）。
 
-### 方式 3（开发/QA）
+需要动环实时数据时另开一个终端起动网关，然后以 `?gw=1` 打开：
 
 ```bash
-npm run dev             # 构建 + 起服务
-npm run shots           # 无头 Chrome 逐页截图 + 控制台错误检查
-node tools/gateway/server.mjs --port 8124 --driver sim   # 单独起动环网关
+node tools/gateway/server.mjs --port 8124 --driver sim
+# 浏览器访问 http://localhost:8123/?gw=1
 ```
-浏览器建议：Chrome / Edge 最新版（需支持 WebGL2）。
-
----
 
 ## 二、功能对照（与原视频一致）
 
@@ -156,7 +134,7 @@ node tools/gateway/server.mjs --port 8124 --driver sim   # 单独起动环网关
 | 动环报警 / 哪些环境报警 | 按级别播报活动报警并切到动环页 |
 | 触发浸水报警 / 演示烟感报警 | 注入演示报警 → 3D 定位 + 语音播报（用于演示/联调） |
 
-> 一句话演示：打开 `start.bat` → 点底部「进入三维巡检」→ 说「**巡检 A-02**」→ 再说「**怎么处理**」→ 再说「**生成工单**」→ 再说「**现场处理完成，复核并归档**」。
+> 一句话演示：用静态服务器打开页面（或构建后双击 index.html）→ 点底部「进入三维巡检」→ 说「**巡检 A-02**」→ 再说「**怎么处理**」→ 再说「**生成工单**」→ 再说「**现场处理完成，复核并归档**」。
 
 ---
 
@@ -164,7 +142,6 @@ node tools/gateway/server.mjs --port 8124 --driver sim   # 单独起动环网关
 
 ```
 index.html                 入口（外壳：顶栏 / 页签 / 舞台 / 底部状态栏）
-start.bat                  一键启动本地服务并打开浏览器
 src/app.js                 主程序：模块装配、页面路由、时钟心跳、片头编排
 src/data.js                本地模拟数据模型（42 机柜 / 256 设备 / 告警 / 工单 / 能耗）+ 事件总线
 src/scene3d.js             Three.js 三维机房（拟真建模、LOD、状态可视化、小维数字人、片头）
@@ -180,14 +157,12 @@ src/styles.css             HUD 面板与图表样式
 vendor/three.module.js     Three.js r169（本地内置，离线可用）
 vendor/OrbitControls.js    轨道相机控制（已改为相对路径引用）
 vendor/RoomEnvironment.js  PBR 环境反射用的程序化环境（PMREM）
-scripts/build.mjs          esbuild 打包（src/app.js → dist/app.js）
 scripts/serve.mjs          零依赖本地静态服务器
 scripts/shot.mjs           Headless Chrome 截图 + 控制台错误检查（QA 自检用）
 scripts/allshots.mjs       批量截取六大页面 + 语音剧情
 ref/                       参考视频（douyin_original.mp4）+ 40 张关键帧 keyframes/ + 局部放大 crops/（还原依据，非软件依赖）
 docs/REQUIREMENTS.md       需求与接口契约（还原自参考视频的逐页规格）
 docs/动环接口规范.md        动环对接规范：设备/测点模型、报警规则、WS/HTTP 接口、北向上报、驱动说明
-docs/启动与故障排查.md      启动与常见问题
 docs/提示词与制作方法.md     三段提示词 / 参考说明 / 制作流程（可选阅读）
 ```
 
@@ -250,7 +225,7 @@ UPS/空调/温湿度/浸水/烟感/配电柜 ⟷ 动环网关(Node) ──WebSoc
 - **点表唯一数据源**：`src/pointtable.js`（39 设备 / 260 测点：132 模拟量 + 128 状态量，含寄存器地址/SNMP OID/MQTT topic/阈值/位定义）。换厂家只改点表，不动代码。
 
 ### 启动
-1. 双击 `start.bat`：若存在 `tools/gateway/server.mjs`，会**自动拉起动环网关（8124，sim 驱动）**并用 `?gw=1` 打开前端 → 动环页显示"已接入网关"。
+1. 先起网关：`node tools/gateway/server.mjs --port 8124 --driver sim`（网关为 Node 源码，零 npm 依赖），再用 `?gw=1` 打开前端 → 动环页显示"已接入网关"。
 2. 单独启动网关：`node tools/gateway/server.mjs --port 8124 --driver sim`（`--driver` 可换 `modbus-tcp|snmp|mqtt|http-json`）。
 3. 直接用 `index.html`（无网关）：前端用**本地模拟器**跑同一套点表，功能完整。
 4. 前端强制/关闭网关：`?gw=1`（默认 8124）、`?gw=ws://10.0.0.5:8124/dh`（指定地址）、`?gw=off`。
@@ -271,27 +246,12 @@ AI 越限 `hi/hiHi/lo/loLo` + **回差 deadband** + **持续延时确认**；DI 
 ### 北向接口（向上级平台上报）
 `IDC.dh.northbound()` 产出标准报文（站点 / 设备在线 / 活动报警 / 指标：在线率、UPS 负载、电池后备、平均温度），对应 `/north/metrics|alarms|points|history` 约定，可经 WS 推送 / HTTP POST 周期上报 / MQTT 发布（见规范 §4）。
 
-## 四、开发与自检
+## 四、开发说明
 
-```bash
-# 重新打包（改了 src/*.js 之后执行；dist/app.js 已随包提供，日常无需构建）
-npm run build            # 或 node scripts/build.mjs
+本仓库**只包含项目源码**：构建产物（`dist/`）、启动/部署脚本、打包与自动化 QA 工具均不在仓库内。
+源码以 ES 模块组织，用任意静态服务器以 `http://localhost` 方式打开即可运行；
+动环网关（`tools/gateway/`）是 Node 源码，可直接 `node tools/gateway/server.mjs --port 8124 --driver sim` 运行（零 npm 依赖）。
 
-# 本地起服务
-npm run serve            # http://localhost:8123/
-
-# 无头浏览器截图 + 控制台错误检查（需要本机装有 Chrome/Edge）
-npm run shot -- --page monitor --out shots/my.png
-npm run shots            # 六大页面 + 6 张语音剧情截图
-node scripts/shot.mjs --page monitor --eval "IDC.app.ask('巡检 A-02')" --out shots/x.png
-```
-
-实现要点：
-- **三维**：Three.js 程序化建模（无外部模型/贴图），机柜与设备复用几何、共享材质，告警用自发光 + 加色精灵做辉光，避免后处理依赖。
-- **图表**：全部 `<canvas>` 2D 手绘（环形仪表、柱状图、折线、环图、迷你趋势线），无第三方图表库。
-- **语音**：识别用 `webkitSpeechRecognition(zh-CN)`，播报用 `speechSynthesis`，二者均做能力检测与降级。
-- **"AI" 推理**：本地规则/关键词打分引擎（无网络请求），保证离线可复现。
-- **数据**：确定性伪随机生成 + 2.5s 心跳微扰，仿真时钟 6 倍速推进。
 
 ## 五、说明
 - 界面所有数据均为示例数据，页面已标注「本地演示数据 · 示例数据」。
@@ -324,13 +284,12 @@ node scripts/shot.mjs --page monitor --eval "IDC.app.ask('巡检 A-02')" --out s
 | `ref_symbols.png` | 图元库全量图元总览（8 分类网格） |
 | `scene_extras.png` / `scene_extra_focus.png` | **图形扩展**：图纸新增的机柜/UPS/灭火器已在 3D 机房出现（带「扩展」铭牌） |
 | `voice_plan_open.png` / `voice_plan_locate.png` / `voice_plan_add.png` | 图纸语音：打开图纸 / 定位 A-02 / 新增机柜 |
-| `e2e_gateway.png` | **端到端联调**：`start.bat` 自动拉起动环网关后，前端以 `ws://localhost:8124/dh` 接入（页面显示"已接入网关"、1000ms 周期、260 测点、UPS 三相/电池实时值、网关侧注入的两条 critical 报警） |
+| `e2e_gateway.png` | **端到端联调**：动环网关（8124）起动后，前端以 `ws://localhost:8124/dh` 接入（页面显示"已接入网关"、1000ms 周期、260 测点、UPS 三相/电池实时值、网关侧注入的两条 critical 报警） |
 | `voice_inspect.png` / `voice_inspect_3d.png` | 语音巡检 A-02：小维回复 + 镜头对准机柜 + 下一步建议 |
 | `voice_alarm.png` | 多轮对话：当前告警 → 电力数据 → 排查顺序 |
 | `voice_close.png` | 闭环：温度回落 24.2℃、工单推进「待核验」、处理记录落地 |
 
-复现方式：`npm run shots`（批量 12 张，含控制台错误检查）。
----
+复现方式：`---
 
 ## 八、许可证与合规
 

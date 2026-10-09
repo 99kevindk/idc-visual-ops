@@ -13,20 +13,17 @@
 
 > OrbitControls.js / RoomEnvironment.js 两个文件被改为相对路径 `./three.module.js` 引用（仅改 import 路径），其余未改动。
 
-## 二、仅开发期使用（devDependencies，不随产物分发）
+## 二、开发期工具（**不在本仓库**）
 
-| 组件 | 版本 | 许可证 | 用途 |
-|---|---|---|---|
-| esbuild | ^0.28.2 | MIT | 把 `src/*.js` 打包成单文件 `dist/app.js` |
-| puppeteer-core | ^25.12.0 | Apache-2.0 | 无头 Chrome 截图 + 控制台错误检查（QA 自检） |
+本仓库只保留项目源码，不包含打包/启动/QA 工具。开发期曾使用 esbuild（MIT，打包源码为单文件）与 puppeteer-core（Apache-2.0，无头 Chrome 截图 QA），
+二者均未随本仓库分发，也不被运行期代码引用。
 
-> `pnpm-lock.yaml` 中的传递依赖仅用于构建/测试，不进入运行产物；如再分发，请遵守各自许可（多为 MIT / Apache-2.0 / ISC）。
 
 ## 三、运行环境依赖（非本项目分发）
 
 | 组件 | 说明 |
 |---|---|
-| Node.js（可选） | 运行打包脚本 `scripts/build.mjs`、动环网关 `tools/gateway/*`、本地服务 `scripts/start.mjs`；仅在本机使用，不随仓库分发 |
+| Node.js（可选） | 运行动环网关 `tools/gateway/*`（Node 源码，零 npm 依赖）；不随仓库分发，仅本机使用 |
 | 浏览器 Web API | Canvas 2D、WebGL2、WebSocket、Web Speech API、speechSynthesis —— W3C/WHATWG 标准，直接调用，无需授权 |
 | Windows PowerShell | `start.bat` 兜底静态服务器（`scripts/serve.ps1`），系统自带 |
 
